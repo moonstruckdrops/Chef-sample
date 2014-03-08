@@ -20,6 +20,7 @@ Third party cooknook(Berkshelf)
 Install cookbook
 
 ```
+$gem install berkshelf --no-rdoc --no-ri
 $berks install --path=cookbooks/
 ```
 
@@ -28,3 +29,9 @@ Update cookbook
 $berks update
 ```
 
+Serverspec
+------
+```
+$gem install serverspec --no-rdoc --no-ri
+$serverspec-init
+```

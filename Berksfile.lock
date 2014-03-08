@@ -2,6 +2,9 @@
   "sources": {
     "yum": {
       "locked_version": "3.1.2"
+    },
+    "yum-epel": {
+      "locked_version": "0.3.4"
     }
   }
 }
