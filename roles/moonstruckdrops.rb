@@ -1,4 +1,4 @@
-name "default_roles"
+name "moonstruckdrops"
 description "chef roles"
 run_list "recipe[moonstruckdrops]"
 env_run_lists(
