@@ -9,7 +9,7 @@
 
 
 # jenkins
-if node["moonstruckdrops"]["yum"]["jenkins"]["managed"]
+if node["moonstruckdrops"]["yum"]["jenkins"]["install"]
    case node[:platform]
    when "centos"
       yum_repository node["moonstruckdrops"]["yum"]["jenkins"]["name"] do
@@ -23,6 +23,7 @@ if node["moonstruckdrops"]["yum"]["jenkins"]["managed"]
 
       node["moonstruckdrops"]["yum"]["jenkins"]["packages"].each do |package|
          yum_package package do
+            options "--enablerepo=#{node["moonstruckdrops"]["yum"]["jenkins"]["name"]}"
             flush_cache [:before]
             action :install
          end
