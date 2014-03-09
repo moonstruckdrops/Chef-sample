@@ -6,5 +6,5 @@ env_run_lists(
    "production" => ["recipe[moonstruckdrops::production]"],
    "staging" => ["recipe[moonstruckdrops::staging]"],
    "testing" => ["recipe[moonstruckdrops::testing]"],
-   "development" => ["recipe[moonstruckdrops::develpment]"]
+   "development" => ["recipe[moonstruckdrops::development]"]
    )
