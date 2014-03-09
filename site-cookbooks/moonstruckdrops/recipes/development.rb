@@ -7,6 +7,30 @@
 # All rights reserved - Do Not Redistribute
 #
 
+# repository
+case node[:platform]
+when "centos"
+   yum_repository node["moonstruckdrops"]["yum"]["remi"]["name"] do
+      description node["moonstruckdrops"]["yum"]["remi"]["description"]
+      baseurl node["moonstruckdrops"]["yum"]["remi"]["baseurl"]
+      mirrorlist node["moonstruckdrops"]["yum"]["remi"]["mirrorlist"]
+      gpgkey node["moonstruckdrops"]["yum"]["remi"]["gpgkey"]
+      gpgcheck node["moonstruckdrops"]["yum"]["remi"]["gpgcheck"]
+      enabled node["moonstruckdrops"]["yum"]["remi"]["enabled"]
+      action :create
+   end
+
+   cookbook_file "RPM-GPG-KEY-remi" do
+      source "RPM-GPG-KEY-remi"
+      path "/etc/pki/rpm-gpg/RPM-GPG-KEY-remi"
+      owner "root"
+      group "root"
+      mode "0644"
+      action :create
+   end
+end
+
+
 
 # jenkins
 if node["moonstruckdrops"]["yum"]["jenkins"]["install"]
