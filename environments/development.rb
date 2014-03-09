@@ -4,9 +4,7 @@ default_attributes ({
    :moonstruckdrops => {
       :yum => {
          :jenkins => {
-               :install => {
-                  true
-               }
+               :install => true
             }
          }
       }
@@ -14,12 +12,8 @@ default_attributes ({
 override_attributes ({
       :yum => {
          :epel => {
-            :enabled => {
-               false
-            },
-            :managed => {
-               true
-            }
+            :enabled => false,
+            :managed => true
          }
       }
    })
